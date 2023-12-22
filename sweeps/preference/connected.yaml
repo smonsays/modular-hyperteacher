@@ -1,0 +1,25 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_loss_outer
+name: 20230911_preference_connected
+parameters:
+  config:
+    values:
+      - configs/preference_grid.py:hnet_deepmlp
+      - configs/preference_grid.py:hnet_linear
+  config.dataset_num_hot:
+    value: 2
+  config.dataset_task_support:
+    values:
+      - connected
+      - disconnected
+  config.seed:
+    values:
+      - 2020
+      - 2021
+      - 2022
+      - 2023
+      - 2024
+      - 2025
+program: run_fewshot.py

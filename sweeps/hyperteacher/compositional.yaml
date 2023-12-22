@@ -1,0 +1,27 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_loss_outer
+name: 20230906_hyperteacher_compositional
+parameters:
+  callback:
+    value: True
+  config:
+    values:
+      - configs/hyperteacher.py:hnet_deepmlp
+      - configs/hyperteacher.py:hnet_linear
+      - configs/hyperteacher.py:anil512
+      - configs/hyperteacher.py:learned_init384
+  config.dataset_task_support:
+    values:
+      - non_compositional
+      - random
+  config.dataset_num_experts:
+    values:
+      - 8
+  config.seed:
+    values:
+      - 2020
+      - 2021
+      - 2022
+program: run_fewshot.py

@@ -1,0 +1,36 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_loss_outer
+name: 20230727_hyperteacher_experts-vs-ood
+parameters:
+  config:
+    values:
+      - configs/hyperteacher.py:hnet_linear
+      - configs/hyperteacher.py:hnet_deepmlp
+      - configs/hyperteacher.py:anil512
+      - configs/hyperteacher.py:learned_init384
+  config.dataset_num_experts:
+    values:
+      - 4
+      - 8
+      - 16
+  config.dataset_frac_ood:
+    values:
+      - 0.1
+      - 0.3
+      - 0.5
+      - 0.7
+      - 0.9
+  config.dataset_num_hot:
+    values:
+      - 2
+  config.seed:
+    values:
+      - 2020
+      - 2021
+      - 2022
+  config.steps_outer:
+    values:
+      - 200000
+program: run_fewshot.py

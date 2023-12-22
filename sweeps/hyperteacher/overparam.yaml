@@ -1,0 +1,45 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_loss_outer
+name: 20230913_hyperteacher_overparam
+parameters:
+  config:
+    values:
+      - configs/hyperteacher.py:hnet_linear
+      - configs/hyperteacher.py:hnet_deepmlp
+  config.dataset_num_experts:
+    values:
+      - 4
+  config.dataset_num_hot:
+    values:
+      - 2
+  config.lr_outer:
+    values:
+      - 0.0003
+      - 0.001
+      - 0.003
+  config.ratio_templates_experts:
+    values:
+      - 1
+      - 2
+      - 4
+      - 8
+      - 16
+  config.dataset_hidden_dim:
+    values:
+      - 16
+  config.base_model_hidden_dim:
+    values:
+      - 16
+      - 32
+      - 64
+      - 128
+      - 256
+      - 512
+  config.seed:
+    values:
+      - 2020
+      - 2021
+      - 2022
+program: run_fewshot.py

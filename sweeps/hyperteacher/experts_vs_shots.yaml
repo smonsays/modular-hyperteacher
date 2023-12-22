@@ -1,0 +1,34 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_loss_outer
+name: 20230828_hyperteacher_experts_vs_shots
+parameters:
+  config:
+    values:
+      - configs/hyperteacher.py:hnet_linear
+      - configs/hyperteacher.py:hnet_deepmlp
+  config.dataset_num_experts:
+    values:
+      - 4
+      - 8
+  config.dataset_num_hot:
+    values:
+      - 2
+      - 4
+  config.dataset_shots_train:
+    values:
+      - 16
+      - 32
+      - 64
+      - 128
+      - 256
+  config.seed:
+    values:
+      - 2020
+      - 2021
+      - 2022
+  config.steps_outer:
+    values:
+      - 200000
+program: run_fewshot.py

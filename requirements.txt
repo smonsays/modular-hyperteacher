@@ -1,0 +1,13 @@
+chex
+dm-haiku
+# evosax
+flax
+# jax
+# jaxopt
+matplotlib
+ml-collections
+numpy
+optax
+plotly
+tqdm
+wandb

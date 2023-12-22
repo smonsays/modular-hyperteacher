@@ -1,0 +1,25 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_loss_outer
+name: 20230906_hyperteacher_connected
+parameters:
+  callback:
+    value: True
+  config:
+    values:
+      - configs/hyperteacher.py:hnet_deepmlp
+      - configs/hyperteacher.py:hnet_linear
+  config.dataset_task_support:
+    values:
+      - connected
+      - disconnected
+  config.dataset_num_experts:
+    values:
+      - 8
+  config.seed:
+    values:
+      - 2020
+      - 2021
+      - 2022
+program: run_fewshot.py

@@ -1,0 +1,32 @@
+method: grid
+metric:
+  goal: minimize
+  name: valid_loss_outer
+name: 20230919_preference_overparam
+parameters:
+  config:
+    values:
+      - configs/preference_grid.py:hnet_deepmlp
+      - configs/preference_grid.py:hnet_linear
+  config.lr_outer:
+    values:
+      - 0.0001
+      - 0.0003
+      - 0.001
+  config.base_model_hidden_dim:
+    values:
+      - 32
+      - 64
+      - 128
+  config.num_templates:
+    values:
+      - 16
+      - 32
+      - 64
+      - 128
+  config.seed:
+    values:
+      - 2020
+      - 2021
+      - 2022
+program: run_fewshot.py

@@ -1,0 +1,62 @@
+method: grid
+name: 20230921_theory_overparam
+parameters:
+  train_step:
+    values:
+      - 10000
+  inner_step:
+    values:
+      - 300
+  scheduler:
+    values:
+     - "cosine"
+  n_input:
+    values:
+      - 16
+  n_hidden:
+    values:
+      - 16
+  n_task:
+    values:
+      - 6
+  n_hidden_student_factor:
+    values:
+      - 2
+      - 4
+      - 8
+      - 16
+      - 32
+  n_task_student_factor:
+    values:
+      - 2
+      - 4
+      - 8
+      - 16
+      - 32
+  weight_decay:
+    values:
+      - 0
+      - 0.00001
+      - 0.0001
+      - 0.001
+  frac_ood:
+    values:
+      - 0.
+  embedding_init:
+    values:
+      - "constant"
+  manual_task:
+    values:
+      - "0,0;1,1;2,2;3,3;4,4;5,5;0,1;1,2;2,3;3,4;4,5;5,0"
+  continuous_combinations:
+    values:
+      - False
+      - True
+  seed:
+    values:
+      - 100
+      - 101
+      - 102
+      # - 103
+      # - 104
+program: run_theory.py
