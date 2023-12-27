@@ -1,6 +1,6 @@
 # Discovering modular solutions that generalize compositionally
 
-Official code to reproduce experiments in [Discovering modular solutions that generalize compositionally](https://www.arxiv.com/MISSING). Code is based on [`metax`](https://github.com/smonsays/metax), a meta-learning research library in jax.
+Official code to reproduce experiments in [Discovering modular solutions that generalize compositionally](https://arxiv.org/abs/2312.15001). Code is based on [`metax`](https://github.com/smonsays/metax), a meta-learning research library in jax.
 
 
 ## Installation
@@ -43,7 +43,12 @@ For the empirical validation of the theory consider `run_theory.py`.
 If you use this code in your research, please cite the paper:
 
 ```
-MISSING
+@article{2023discovering,
+  title={Discovering modular solutions that generalize compositionally}, 
+  author={Simon Schug and Seijin Kobayashi and Yassir Akram and Maciej Wołczyk and Alexandra Proca and Johannes von Oswald and Razvan Pascanu and João Sacramento and Angelika Steger},
+  year={2023},
+  url = {https://arxiv.org/abs/2312.15001},
+}
 ```
 
 ## Acknowledgements
